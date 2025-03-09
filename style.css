@@ -1409,7 +1409,10 @@ footer {
 }
 
 .two-words article {
-    font-size: 3rem
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff; /* Text color */
+    animation: glow 6s infinite alternate ease-in-out;
 }
 
 .social-media-container {
@@ -2034,5 +2037,17 @@ footer {
     .landing-page-container {
         height: fit-content;
         margin-top: 100px;  
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #8000ff, 0 0 10px #8000ff, 0 0 15px #8000ff;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #8000ff, 0 0 10px #8000ff, 0 0 15px #8000ff;
     }
 }
