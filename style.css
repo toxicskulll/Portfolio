@@ -679,7 +679,8 @@ noscript {
     -webkit-background-clip: text;
     background-size: 400% 400%;
     -webkit-animation: 3s infinite gradient;
-    animation: 3s infinite gradient
+    animation: 3s infinite gradient;
+    z-index:2;
 }
 
 @keyframes gradient {
