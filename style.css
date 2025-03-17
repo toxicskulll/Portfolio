@@ -579,7 +579,7 @@ noscript {
 .text-content {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     height: 100%;
     align-items: flex-start;
     justify-content: center
