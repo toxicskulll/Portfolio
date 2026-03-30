@@ -46,7 +46,7 @@ export const publications = [
     status: "Published",
     date: "2025-03",
     abstract: "This survey reviews deep learning and machine learning approaches for brain tumor segmentation using medical imaging modalities such as MRI and CT. It highlights the effectiveness of CNNs, U-Nets, and hybrid models in achieving high accuracy in tumor detection. The paper identifies key challenges including limited labeled datasets, class imbalance, computational cost, and lack of clinical validation. It also discusses evaluation metrics such as Dice coefficient and Hausdorff distance, and emphasizes future directions including multi-modal integration, explainability, and real-time clinical deployment.",
-    links: { doi: "https://doi.org/10.1109/COMP-SIF65618.2025.10969924", arxiv: "", code: "" },
+    links: { doi: "", arxiv: "", code: "" },
     year: 2025,
   },
 ];
