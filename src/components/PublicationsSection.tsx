@@ -201,21 +201,20 @@ const PublicationsSection = () => {
                 {/* Links */}
                 <div className="flex gap-2 flex-wrap">
                   {pub.links.doi && (
-                    <motion.a 
-                      href={pub.links.doi} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 font-mono text-xs transition-all px-2.5 py-1.5 rounded-md"
-                      style={{ color: "var(--white)", backgroundColor: `${dotColor}20`, border: `1px solid ${dotColor}40` }}
-                      whileHover={{ 
-                        scale: 1.08,
-                        backgroundColor: `${dotColor}40`, 
-                        boxShadow: `0 0 15px ${dotColor}80, 0 0 30px ${dotColor}40`
+                    <button
+                      onClick={() => {
+                        const raw = pub.links.doi;
+                        const url = raw.startsWith("http") ? raw : `https://doi.org/${raw}`;
+                        console.log("Opening DOI:", url);
+                        window.open(url, "_blank");
                       }}
-                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-1 font-mono text-xs transition-all px-2.5 py-1.5 rounded-md hover:scale-105 active:scale-95 cursor-pointer border-none"
+                      style={{ color: "var(--white)", backgroundColor: `${dotColor}20`, border: `1px solid ${dotColor}40` }}
+                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = `${dotColor}40`; e.currentTarget.style.boxShadow = `0 0 15px ${dotColor}80, 0 0 30px ${dotColor}40`; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = `${dotColor}20`; e.currentTarget.style.boxShadow = 'none'; }}
                     >
                       <ExternalLink size={11} /> DOI
-                    </motion.a>
+                    </button>
                   )}
                   {pub.links.arxiv && (
                     <motion.a 
@@ -393,21 +392,20 @@ const PublicationsSection = () => {
               {/* Links */}
               <div className="flex gap-3 flex-wrap">
                 {publication.links.doi && (
-                  <motion.a
-                    href={publication.links.doi}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-mono text-sm transition-all px-4 py-2 rounded-lg"
-                    style={{ color: "var(--white)", backgroundColor: `${dotColor}20`, border: `1px solid ${dotColor}60` }}
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: `${dotColor}40`,
-                      boxShadow: `0 0 20px ${dotColor}80, 0 0 40px ${dotColor}40`,
+                  <button
+                    onClick={() => {
+                      const raw = publication.links.doi;
+                      const url = raw.startsWith("http") ? raw : `https://doi.org/${raw}`;
+                      console.log("Opening DOI:", url);
+                      window.open(url, "_blank");
                     }}
-                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 font-mono text-sm transition-all px-4 py-2 rounded-lg hover:scale-105 active:scale-95 cursor-pointer border-none"
+                    style={{ color: "var(--white)", backgroundColor: `${dotColor}20`, border: `1px solid ${dotColor}60` }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = `${dotColor}40`; e.currentTarget.style.boxShadow = `0 0 20px ${dotColor}80, 0 0 40px ${dotColor}40`; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = `${dotColor}20`; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <ExternalLink size={16} /> DOI
-                  </motion.a>
+                  </button>
                 )}
                 {publication.links.arxiv && (
                   <motion.a
